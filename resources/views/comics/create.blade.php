@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="{{ route('comics.store')}}" method="POST">
         @csrf
         <input type="text" placeholder="Scrivi qualcosa">
         <button>INVIA</button>

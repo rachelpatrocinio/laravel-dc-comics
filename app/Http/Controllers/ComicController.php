@@ -25,4 +25,8 @@ class ComicController extends Controller
         $comic = Comic::findOrFail($comic);
         return view('comics.show', compact('comic'));
     }
+
+    public function store(){
+        
+    }
 }
