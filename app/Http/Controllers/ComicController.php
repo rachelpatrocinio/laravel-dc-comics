@@ -23,5 +23,6 @@ class ComicController extends Controller
     }
 
     public function store(){
+        dump('metodo store');
     }
 }
