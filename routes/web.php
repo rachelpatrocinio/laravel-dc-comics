@@ -13,8 +13,9 @@ use App\Http\Controllers\ComicController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', [ComicController::class, 'home'])->name('home');
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 Route::get('/comics/create',[ComicController::class, 'create'])->name('comics.create');
