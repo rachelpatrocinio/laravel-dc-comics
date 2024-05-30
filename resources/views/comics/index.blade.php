@@ -12,6 +12,8 @@
             <p>{{ $comic->series}}</p>
             <p>{{ $comic->sale_date}}</p>
             <p>{{ $comic->type}}</p>
+            <a href="{{ route('comics.edit',$comic) }}">Edit</a>
+            <a href="{{ route('comics.show',$comic) }}">Info</a>
         </div>
     </li>
     @endforeach

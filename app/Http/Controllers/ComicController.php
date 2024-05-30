@@ -17,7 +17,7 @@ class ComicController extends Controller
         return view('comics.create');
     }
 
-    public function show(Comic $comic){
+    public function show($comic){
         $comic = Comic::findOrFail($comic);
         return view('comics.show', compact('comic'));
     }
@@ -25,6 +25,16 @@ class ComicController extends Controller
     public function store(Request $request){
         $form_data = $request->all();
         $new_comic = Comic::create($form_data);
-        return to_route('comics.index', $new_comic);
+        return to_route('comics.show', $new_comic);
+    }
+
+    public function edit(Comic $comic){
+        return view('comics.edit', compact('comic'));
+    }
+
+    public function update(Request $request,Comic $comic){
+        $form_data = $request->all();
+        $comic->update($form_data);
+        return to_route('comics.show', $comic);
     }
 }
